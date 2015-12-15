@@ -15,7 +15,7 @@
   <description>
     Camus is LinkedIn's Kafka->HDFS pipeline. It is a mapreduce job that does distributed data loads out of Kafka.
   </description>
-  <url>https://github.com/linkedin/camus</url>
+  <url>https://github.com/angushe/camus</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -177,14 +177,14 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/linkedin/camus.git</connection>
-    <developerConnection>scm:git:git@github.com:linkedin/camus.git</developerConnection>
-    <url>http://github.com/linkedin/camus/</url>
+    <connection>scm:git:git://github.com/angushe/camus.git</connection>
+    <developerConnection>scm:git:git@github.com:angushe/camus.git</developerConnection>
+    <url>http://github.com/angushe/camus/</url>
   </scm>
 
   <issueManagement>
     <system>github</system>
-    <url>http://github.com/linkedin/camus/issues</url>
+    <url>http://github.com/angushe/camus/issues</url>
   </issueManagement>
 
   <repositories>
