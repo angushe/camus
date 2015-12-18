@@ -376,10 +376,6 @@ public class CamusJob extends Configured implements Tool {
     Class<? extends EtlCounts> etlCountsClass = (Class<? extends EtlCounts>) Class.forName(etlCountsClassName);
     sendTrackingCounts(job, fs, newExecutionOutput, etlCountsClass);
 
-    Path newHistory = new Path(execHistory, executionDate);
-    log.info("Moving execution to history : " + newHistory);
-    fs.rename(newExecutionOutput, newHistory);
-
     log.info("Job finished");
     stopTiming("commit");
     stopTiming("total");
@@ -423,6 +419,10 @@ public class CamusJob extends Configured implements Tool {
       EtlInputFormat.reportJobFailureDueToLeaderNotAvailable = false;
       throw new RuntimeException("Some topic partitions skipped due to Kafka leader not available.");
     }
+
+    Path newHistory = new Path(execHistory, executionDate);
+    log.info("Moving execution to history : " + newHistory);
+    fs.rename(newExecutionOutput, newHistory);
   }
 
   private void checkIfTooManySkippedMsg(Counters counters) {
